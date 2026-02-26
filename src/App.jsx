@@ -48,49 +48,45 @@ export default function App() {
 </header>
 
       {/* HERO */}
-<section className="relative py-32 px-6 bg-white overflow-hidden">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
 
-    <div>
-      <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-        Проектируем и строим
-        <br />
-        современные дома
-      </h1>
+  {/* Фон */}
+  <motion.img
+    src={residence1}
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 4 }}
+    className="absolute inset-0 w-full h-full object-cover"
+    alt="Дана Строй"
+  />
 
-      <p className="text-lg text-gray-600 mb-10 max-w-xl">
-        Level House — девелоперская компания во Владивостоке.
-        Реализуем частные дома под ключ с гарантией,
-        прозрачной сметой и соблюдением сроков.
-      </p>
+  {/* Градиент */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
-      <div className="flex gap-6 flex-wrap">
-        <a
-          href="#projects"
-          className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition"
-        >
-          Смотреть проекты
-        </a>
+  {/* Контент */}
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="relative text-center text-white px-6"
+  >
+    <h1 className="text-6xl md:text-7xl font-light tracking-wide mb-8">
+      Архитектура<br />нового уровня
+    </h1>
 
-        <a
-          href="#form"
-          className="border border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition"
-        >
-          Получить консультацию
-        </a>
-      </div>
-    </div>
+    <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+      Дана Строй — современная девелоперская компания.
+      Проектируем и реализуем частные резиденции премиум-класса.
+    </p>
 
-    <div className="relative">
-      <img
-        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80"
-        alt="Современный дом"
-        className="rounded-xl shadow-lg"
-      />
-      <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-100 rounded-xl -z-10"></div>
-    </div>
+    <a
+      href="#projects"
+      className="inline-block border border-white px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+    >
+      Смотреть проекты
+    </a>
+  </motion.div>
 
-  </div>
 </section>
 
    {/* PROJECTS */}
@@ -277,47 +273,41 @@ export default function App() {
   </div>
 </section>
 
-      <section id="form" className="py-24 px-6 bg-gray-50">
+      {/* FORM */}
+      <section id="form" className="py-20 px-6">
+        <div className="max-w-2xl mx-auto bg-white border rounded-xl p-10 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Получить консультацию
+          </h2>
 
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: true }}
-    className="max-w-xl mx-auto bg-white p-10 rounded-2xl shadow"
-  >
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="relative">
+  <input
+    type="text"
+    required
+    className="peer w-full p-4 border border-gray-300 rounded-xl bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-transparent"
+    placeholder="Ваше имя"
+  />
+  <label className="absolute left-4 top-4 text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-600 bg-white px-1">
+    Ваше имя
+  </label>
+</div>
 
-    <h2 className="text-3xl font-light mb-8 text-center">
-      Получить консультацию
-    </h2>
+            <input
+              type="tel"
+              placeholder="Ваш телефон"
+              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full border px-4 py-3 rounded-lg"
+            />
 
-    <form className="space-y-6">
-
-      <input
-        type="text"
-        placeholder="Ваше имя"
-        className="w-full p-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-
-      <input
-        type="tel"
-        placeholder="Ваш телефон"
-        className="w-full p-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-
-      <button
-        type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg"
-      >
-        Отправить заявку
-      </button>
-
-    </form>
-
-  </motion.div>
-
-</section>
-
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg">
+                Отправить заявку
+        </button>
+          </form>
+        </div>
+      </section>
 {/* FOOTER */}
 <footer className="bg-gray-900 text-gray-400 py-14 px-6">
   <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
