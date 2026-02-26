@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import residence1 from "./assets/residence1.jpg";
 import residence2 from "./assets/residence2.jpg";
-
 import { useState } from "react";
 
 export default function App() {
@@ -277,41 +277,47 @@ export default function App() {
   </div>
 </section>
 
-      {/* FORM */}
-      <section id="form" className="py-20 px-6">
-        <div className="max-w-2xl mx-auto bg-white border rounded-xl p-10 shadow-sm">
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            Получить консультацию
-          </h2>
+      <section id="form" className="py-24 px-6 bg-gray-50">
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              placeholder="Ваше имя"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border px-4 py-3 rounded-lg"
-            />
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="max-w-xl mx-auto bg-white p-10 rounded-2xl shadow"
+  >
 
-            <input
-              type="tel"
-              placeholder="Ваш телефон"
-              required
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full border px-4 py-3 rounded-lg"
-            />
+    <h2 className="text-3xl font-light mb-8 text-center">
+      Получить консультацию
+    </h2>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-            >
-              Отправить заявку
-            </button>
-          </form>
-        </div>
-      </section>
+    <form className="space-y-6">
+
+      <input
+        type="text"
+        placeholder="Ваше имя"
+        className="w-full p-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      <input
+        type="tel"
+        placeholder="Ваш телефон"
+        className="w-full p-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      <button
+        type="submit"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg"
+      >
+        Отправить заявку
+      </button>
+
+    </form>
+
+  </motion.div>
+
+</section>
+
 {/* FOOTER */}
 <footer className="bg-gray-900 text-gray-400 py-14 px-6">
   <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
