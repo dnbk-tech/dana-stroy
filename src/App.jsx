@@ -245,22 +245,29 @@ export default function App() {
 </section>
    
    {/* PHILOSOPHY */}
-<section className="py-40 px-6 bg-gray-50 text-center">
-  <div className="max-w-4xl mx-auto">
+<section className="bg-gray-50 py-48 px-6">
 
-    <h2 className="text-5xl font-light mb-12 leading-tight">
-      Мы создаём пространство,<br />
-      в котором хочется жить
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="max-w-5xl mx-auto text-center"
+  >
+
+    <h2 className="text-6xl md:text-7xl font-light leading-tight mb-16 text-gray-900">
+      Пространство<br />
+      для жизни нового уровня
     </h2>
 
-    <p className="text-xl text-gray-600 leading-relaxed">
-      Level House — девелоперская компания,
-      специализирующаяся на современных частных резиденциях.
-      Мы объединяем архитектуру, инженерные решения
-      и безупречное исполнение.
+    <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+      Дана Строй — девелоперская компания,
+      создающая современные частные резиденции
+      с продуманной архитектурой и инженерией.
     </p>
 
-  </div>
+  </motion.div>
+
 </section>
 
 
@@ -308,77 +315,54 @@ export default function App() {
 
   </div>
 </section>
+{/* FORM */}
+<section id="form" className="py-40 px-6 bg-white">
 
-      {/* FORM */}
-      <section id="form" className="py-20 px-6">
-        <div className="max-w-2xl mx-auto bg-white border rounded-xl p-10 shadow-sm">
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            Получить консультацию
-          </h2>
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="max-w-3xl mx-auto text-center"
+  >
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="relative">
-  <input
-    type="text"
-    required
-    className="peer w-full p-4 border border-gray-300 rounded-xl bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-transparent"
-    placeholder="Ваше имя"
-  />
-  <label className="absolute left-4 top-4 text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-600 bg-white px-1">
-    Ваше имя
-  </label>
-</div>
+    <h2 className="text-5xl font-light mb-16 text-gray-900">
+      Обсудить проект
+    </h2>
 
-            <input
-              type="tel"
-              placeholder="Ваш телефон"
-              required
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full border px-4 py-3 rounded-lg"
-            />
+    <form className="space-y-8 text-left">
 
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg">
-                Отправить заявку
-        </button>
-          </form>
-        </div>
-      </section>
-{/* FOOTER */}
-<footer className="bg-gray-900 text-gray-400 py-14 px-6">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
-
-    <div>
-      <h3 className="text-white font-semibold mb-4">
-        Level House
-      </h3>
-      <p className="text-sm">
-        Строительство современных домов под ключ во Владивостоке.
-      </p>
-    </div>
-
-    <div>
-      <h4 className="text-white font-semibold mb-4">
-        Навигация
-      </h4>
-      <div className="space-y-2 text-sm">
-        <a href="#projects" className="block hover:text-white transition">Проекты</a>
-        <a href="#form" className="block hover:text-white transition">Заявка</a>
+      <div>
+        <input
+          type="text"
+          placeholder="Ваше имя"
+          className="w-full border-b border-gray-300 py-4 text-lg focus:outline-none focus:border-black transition"
+        />
       </div>
-    </div>
 
-    <div>
-      <h4 className="text-white font-semibold mb-4">
-        Контакты
-      </h4>
-      <p className="text-sm mb-2">Владивосток</p>
-      <p className="text-sm">+7 (926) 816-3949</p>
-    </div>
+      <div>
+        <input
+          type="tel"
+          placeholder="Ваш телефон"
+          className="w-full border-b border-gray-300 py-4 text-lg focus:outline-none focus:border-black transition"
+        />
+      </div>
 
-  </div>
+      <button
+        type="submit"
+        className="mt-10 border border-black px-10 py-4 rounded-full hover:bg-black hover:text-white transition-all duration-300"
+      >
+        Отправить заявку
+      </button>
 
-  <div className="text-center text-xs text-gray-500 mt-12">
-    © 2026 Level House. Все права защищены.
+    </form>
+
+  </motion.div>
+
+</section>
+<footer className="bg-gray-100 py-20 px-6">
+  <div className="max-w-6xl mx-auto text-center text-gray-600 text-sm">
+    © 2026 Дана Строй — Владивосток
   </div>
 </footer>
 {/* FLOATING WHATSAPP */}
