@@ -90,56 +90,92 @@ export default function App() {
 </section>
 
    {/* PROJECTS */}
-<section id="projects" className="py-32 px-6 bg-white">
-  <div className="max-w-6xl mx-auto space-y-32">
+<section id="projects" className="bg-white py-40 px-6">
 
-    {/* Проект 1 */}
-    <div className="grid md:grid-cols-2 gap-16 items-center">
-      <img
-       src={residence1}
-        className="w-full h-[500px] object-cover"
-      />
+  <div className="max-w-6xl mx-auto space-y-40">
+
+    {/* PROJECT 1 */}
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="grid md:grid-cols-2 gap-16 items-center"
+    >
+      <div className="relative overflow-hidden rounded-2xl">
+        <img
+          src={residence1}
+          className="w-full h-[600px] object-cover transition duration-700 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
 
       <div>
-        <h2 className="text-4xl font-light mb-6">
-          LH Residence 210
+        <h2 className="text-5xl font-light mb-8">
+          Residence 210
         </h2>
-        <p className="text-gray-600 mb-6 leading-relaxed">
-          Частная резиденция площадью 210 м².
-          Современная архитектура, панорамное остекление,
-          индивидуальные планировочные решения.
+
+        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+          Современная резиденция площадью 210 м²
+          с панорамным остеклением и архитектурной подсветкой.
         </p>
-        <p className="text-black font-medium">
+
+        <p className="text-2xl font-medium mb-8">
           от 10 500 000 ₽
         </p>
+
+        <a
+          href="#form"
+          className="inline-block border border-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300"
+        >
+          Запросить консультацию
+        </a>
       </div>
-    </div>
+    </motion.div>
 
-    {/* Проект 2 */}
-    <div className="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
-      <img
-        src={residence2}
-        className="w-full h-[500px] object-cover"
-      />
 
-      <div>
-        <h2 className="text-4xl font-light mb-6">
-          LH Residence 160
+    {/* PROJECT 2 */}
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="grid md:grid-cols-2 gap-16 items-center"
+    >
+      <div className="order-2 md:order-1">
+        <h2 className="text-5xl font-light mb-8">
+          Residence 160
         </h2>
-        <p className="text-gray-600 mb-6 leading-relaxed">
-          Архитектурный проект с акцентом на минимализм
-          и функциональность пространства.
+
+        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+          Минималистичная архитектура с продуманной планировкой
+          и приватным двором.
         </p>
-        <p className="text-black font-medium">
+
+        <p className="text-2xl font-medium mb-8">
           от 7 800 000 ₽
         </p>
+
+        <a
+          href="#form"
+          className="inline-block border border-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300"
+        >
+          Запросить консультацию
+        </a>
       </div>
-    </div>
+
+      <div className="relative overflow-hidden rounded-2xl order-1 md:order-2">
+        <img
+          src={residence2}
+          className="w-full h-[600px] object-cover transition duration-700 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
+    </motion.div>
 
   </div>
+
 </section>
-
-
 {/* TRUST BLOCK */}
 <section className="py-28 px-6 bg-white">
   <div className="max-w-7xl mx-auto">
